@@ -46,6 +46,16 @@ def maximumCandies(candies: list[int], k: int) -> int:
 
     return right
 
+import math
+
+def sumOfCubes(l: list[int]) -> int:
+    total = 0
+    for val in l:
+        if math.cbrt(val).is_integer():
+            total += val
+    return total
+
+
 def main() -> None:
     print(maximumCandies(candies = [5,8,6], k = 3)) # 5
     print(maximumCandies(candies = [2,5], k = 11))  # 0
@@ -56,8 +66,11 @@ def main() -> None:
     # the minimum of the values if the len(candies) == k
     # that would be 1 here, but the actual answer is 50
     print(maximumCandies(candies = [1, 100, 100], k = 3))  
+    print(sumOfCubes([1, 2, 3, 4, 5, 6, 7, 8, 9, 10]))
 
 
 
 if __name__ == '__main__':
     main()
+
+# sumOfCubes([1, 2, 3, 4, 5, 6, 7, 8, 9, 10]) => 36
